@@ -1,13 +1,12 @@
 package tacos.ingredientclient.resttemplate;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @Conditional(NotFeignAndNotWebClientCondition.class)
@@ -19,7 +18,7 @@ public class RestTemplateConfig {
   public RestTemplate restTemplate() {
     return new RestTemplate();
   }
-  
+
   @Bean
   public CommandLineRunner startup() {
     return args -> {
@@ -28,5 +27,4 @@ public class RestTemplateConfig {
       log.info("**************************************");
     };
   }
-  
 }

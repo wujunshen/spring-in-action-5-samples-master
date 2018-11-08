@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 public class Ingredient {
 
   private final String id;
@@ -15,7 +15,10 @@ public class Ingredient {
   private final Type type;
 
   public static enum Type {
-    WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
+    WRAP,
+    PROTEIN,
+    VEGGIES,
+    CHEESE,
+    SAUCE
   }
-
 }

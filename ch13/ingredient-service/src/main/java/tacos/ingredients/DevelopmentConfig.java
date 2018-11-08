@@ -3,7 +3,6 @@ package tacos.ingredients;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import tacos.ingredients.Ingredient.Type;
 
 @Configuration
@@ -24,5 +23,4 @@ public class DevelopmentConfig {
       repo.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
     };
   }
-  
 }

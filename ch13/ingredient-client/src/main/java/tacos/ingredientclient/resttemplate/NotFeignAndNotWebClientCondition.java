@@ -8,8 +8,7 @@ public class NotFeignAndNotWebClientCondition implements Condition {
 
   @Override
   public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-    return !context.getEnvironment().acceptsProfiles("feign") 
+    return !context.getEnvironment().acceptsProfiles("feign")
         && !context.getEnvironment().acceptsProfiles("webclient");
   }
-  
 }
