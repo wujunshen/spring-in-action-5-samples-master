@@ -1,58 +1,56 @@
-//tag::all[]
-//tag::allButValidation[]
+// tag::all[]
+// tag::allButValidation[]
 package tacos;
+
+import lombok.Data;
+import org.hibernate.validator.constraints.CreditCardNumber;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.CreditCardNumber;
-
-import lombok.Data;
-
 @Data
 public class Order {
 
-  //end::allButValidation[]
-  @NotBlank(message="Name is required")
-  //tag::allButValidation[]
+  // end::allButValidation[]
+  @NotBlank(message = "Name is required")
+  // tag::allButValidation[]
   private String name;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @NotBlank(message="Street is required")
-  //tag::allButValidation[]
+  @NotBlank(message = "Street is required")
+  // tag::allButValidation[]
   private String street;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @NotBlank(message="City is required")
-  //tag::allButValidation[]
+  @NotBlank(message = "City is required")
+  // tag::allButValidation[]
   private String city;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @NotBlank(message="State is required")
-  //tag::allButValidation[]
+  @NotBlank(message = "State is required")
+  // tag::allButValidation[]
   private String state;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @NotBlank(message="Zip code is required")
-  //tag::allButValidation[]
+  @NotBlank(message = "Zip code is required")
+  // tag::allButValidation[]
   private String zip;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @CreditCardNumber(message="Not a valid credit card number")
-  //tag::allButValidation[]
+  @CreditCardNumber(message = "Not a valid credit card number")
+  // tag::allButValidation[]
   private String ccNumber;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @Pattern(regexp="^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
-           message="Must be formatted MM/YY")
-  //tag::allButValidation[]
+  @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$", message = "Must be formatted MM/YY")
+  // tag::allButValidation[]
   private String ccExpiration;
-  //end::allButValidation[]
+  // end::allButValidation[]
 
-  @Digits(integer=3, fraction=0, message="Invalid CVV")
-  //tag::allButValidation[]
+  @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
+  // tag::allButValidation[]
   private String ccCVV;
-
 }
-//end::allButValidation[]
-//end::all[]
+// end::allButValidation[]
+// end::all[]
